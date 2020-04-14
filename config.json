@@ -1,3 +1,7 @@
 {
-	"token": ""
+	"token": "bot_token",
+	"disc_channel": "social_channel",
+	"disc_id": "user_discord_id",
+	"twitter_id": null,
+	"instagram_id": null
 }
