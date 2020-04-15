@@ -46,7 +46,7 @@ client.on('ready', async () => { // when the client has logged in
   var stream = twitter.stream('statuses/filter', {follow: [mainUser.twitterId]}); // start a twitter api stream to listen to all tweets from the user
 
   stream.on('tweet', function (tweet) { // when the user tweets
-    if (!tweet.retweeted){ // if the tweet was not retweeted
+    if (!tweet.retweeted && tweet.user.id == mainUser.twitterId){ // if the tweet was not retweeted and is not a reply tweet
       mainUser.tweetMessage(tweet.text);
     }
     console.log(tweet);
