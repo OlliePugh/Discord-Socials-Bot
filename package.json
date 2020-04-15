@@ -1,0 +1,25 @@
+{
+  "name": "discord-socials-bot",
+  "version": "1.0.0",
+  "description": "A discord bot that will post a users tweets into a discord channel",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlliePugh/Discord-Socials-Bot.git"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "twitter",
+	"social media"
+  ],
+  "author": "Ollie Pugh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OlliePugh/Discord-Socials-Bot/issues"
+  },
+  "homepage": "https://github.com/OlliePugh/Discord-Socials-Bot#readme"
+}
