@@ -35,7 +35,7 @@ class User { // A class for storing a users socials
     }
 
   tweetMessage(message){ // post a social media update
-    this.channel.send(this.discUser.username + " just tweeted:\n" + message);
+    this.channel.send(this.discUser.username + " just tweeted:\n" + escapeHTML(message));
   }
 }
 
@@ -47,10 +47,13 @@ client.on('ready', async () => { // when the client has logged in
 
   stream.on('tweet', function (tweet) { // when the user tweets
     if (!tweet.retweeted && tweet.user.id == mainUser.twitterId){ // if the tweet was not retweeted and is not a reply tweet
-      mainUser.tweetMessage(tweet.text);
+      mainUser.tweetMessage(escapeHTML(tweet.text));
     }
-    console.log(tweet);
   })
 });
 
 client.login(config.token); // log the discord client in
+
+function escapeHTML(toChange){ // Re-add symbols
+  return toChange.replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"');
+}
